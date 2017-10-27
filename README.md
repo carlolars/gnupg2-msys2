@@ -1,3 +1,15 @@
+- [Using GnuPGv2 with MSYS2](#using-gnupgv2-with-msys2)
+    - [Change GnuPG home (optional)](#change-gnupg-home-optional)
+    - [Install GnuPG](#install-gnupg)
+    - [Paths](#paths)
+        - [Windows *Path*](#windows-path)
+        - [MSYS2 *PATH*](#msys2-path)
+    - [Using gpg](#using-gpg)
+        - [Problems in MSYS2 terminal](#problems-in-msys2-terminal)
+- [SmartCard SSH Authentication in MSYS2](#smartcard-ssh-authentication-in-msys2)
+    - [Using .bash_profile to start gpg-agent and ssh-pageant](#using-bashprofile-to-start-gpg-agent-and-ssh-pageant)
+- ['Windows HELLO for Business' and SmartCard problem in GnuPG](#windows-hello-for-business-and-smartcard-problem-in-gnupg)
+
 # Using GnuPGv2 with MSYS2
 MSYS2 comes with version 1.4 of GnuPG and will (probably) never get version 2.
 
