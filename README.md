@@ -19,7 +19,7 @@ $ setx GNUPGHOME /h/.gnupg
 ```
 
 ## Install GnuPG
-Download and install GnuPG, eiter use full *Gpg4win* or the simple installer. Gpg4win will install the same GnuPG but with some additional GUI applications.
+Download and install *Gpg4win*. Gpg4win will install the same GnuPG as the *simple installer* but with some additional GUI applications and more importantly a better pinentry.
 
 ## Paths
 ### Windows *Path*
@@ -58,7 +58,7 @@ To enable this I run the gpg-agent with *putty-support*, which will make the gpg
 
 Other programs that use Pageant, like WinSCP, can also get the key from the gpg-agent now.
 
-# Using .bash_profile to start gpg-agent and ssh-pageant
+## Using .bash_profile to start gpg-agent and ssh-pageant
 Add the following to *.bash_profile* to autostart the `gpg-agent` and `ssh-pageant` unless connected via SSH:
 ```
 function setup_gpg2()
