@@ -72,3 +72,15 @@ function setup_gpg2()
 }
 [ -z "$SSH_CONNECTION" ] && setup_gpg2
 ```
+# 'Windows HELLO for Business' and SmartCard problem in GnuPG
+I had my Microsoft work account connected to my local user on my home computer, and when messing around I got a question if I wanted to enable something with that account, I don't exactly remember what.
+
+But anyway, after enabling it my Yubikey4 stopped working with `gpg`, I got an error saying '*No card*'.
+
+After some digging around I found that there was a new card reader installed called `Windows HELLO for Business`, and this new reader where on index 0 while my Yubikey card reader now had index 1.
+
+I tried to remedy this by adding `reader-port 1` to *scdaemon.conf* in my *GNUPGHOME* directory but it didn't work, it seemd like the *scdaemon* didn't read the file.
+
+I then tried to remove the new `Windows HELLO for Business` card reader but without success. The reader were not listed in the Device Manager and the internet gave no answer on how to uninstall. I began to realize that it was a big mistake to enable that thing from the beginning...
+
+But if I logged on to another user then the new card reader were not present. So I ended up creating a new local user for myself, and this time I won't ever connect my work account.
