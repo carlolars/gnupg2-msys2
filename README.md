@@ -5,6 +5,7 @@
         - [Windows *Path*](#windows-path)
         - [MSYS2 *PATH*](#msys2-path)
     - [**gpg** and **mintty** needs **winpty**](#gpg-and-mintty-needs-winpty)
+    - [Enter passphrase in the terminal instead of a popup window](#enter-passphrase-in-the-terminal-instead-of-a-popup-window)
 - [SmartCard SSH Authentication in MSYS2](#smartcard-ssh-authentication-in-msys2)
 - [.bash_profile](#bash-profile)
 - [Problems](#problems)
@@ -72,6 +73,13 @@ The reason not to call the alias `gpg` to always use *winpty* is that some comma
 does not work as expected when running it through *winpty*. So you'll need both.
 
 Put the alias in your *.bash_profile* file, see [below](#.bash_profile).
+
+## Enter passphrase in the terminal instead of a popup window
+The default behaviour when `gpg` is asking for a password is to use a graphical popup window.
+
+By adding `pinentry-mode loopback` to your `gpg.conf` file (`~/.gnupg/gpg.conf`) gpg will ask for passphrases using the same terminal as it was called from, but since pinentry prints its output to a Windows console then `gpg` **must** be called using `winpty`, see [above](#gpg-and-mintty-needs-winpty).
+
+Unfortunately if using the gpg-agent + ssh-pageant from below then any ssh command that accesses the key from the gpg-agent will still show the popup window.
 
 # SmartCard SSH Authentication in MSYS2
 I have a Yubikey4 which is loaded with my gpg keys that I use for SSH authentication.
