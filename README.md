@@ -4,9 +4,9 @@
     - [Paths](#paths)
         - [Windows *Path*](#windows-path)
         - [MSYS2 *PATH*](#msys2-path)
-    - [gpg and mintty needs winpty](#gpg-and-mintty-needs-winpty)
+    - [**gpg** and **mintty** needs **winpty**](#gpg-and-mintty-needs-winpty)
 - [SmartCard SSH Authentication in MSYS2](#smartcard-ssh-authentication-in-msys2)
-- [.bash_profile](#bashprofile)
+- [.bash_profile](#bash-profile)
 - [Problems](#problems)
     - ['Windows HELLO for Business' and SmartCard problem with GnuPG](#windows-hello-for-business-and-smartcard-problem-with-gnupg)
 
@@ -15,7 +15,7 @@ MSYS2 comes with version 1.4 of GnuPG and will (probably) never get version 2.
 
 There are mingw32/64 packets that can be installed using pacman but they don't work at all, at least not the mingw64 version I have tested.
 
-Instead I use the official build of GnuPG from www.gnupg.org, and it ~~(almost)~~ works.
+Instead I use the official build of GnuPG from www.gnupg.org (2.2.1), and it works well.
 
 ## Change GnuPG home (optional)
 The default home directory used by GnuPG is `%APPDATA%/gnupg`.
@@ -24,9 +24,9 @@ If you want to use another path then you must create an environmental variable f
 
 This is easiest to do from the command line using the `SETX` command, for example to set the GnuPG home to `H:\.gnupg` use the following command:
 ```bash
-# Windows Terminal:
+# From the Windows Terminal:
 >setx GNUPGHOME H:\.gnupg
-# MSYS2 Terminal:
+# or from the MSYS2 Terminal:
 $ setx GNUPGHOME /h/.gnupg
 ```
 
@@ -52,7 +52,7 @@ PATH="/c/Program Files (x86)/gnupg/bin":$PATH
 
 See below for an example [*.bash_profile*](#.bash_profile).
 
-## gpg and mintty needs winpty
+## **gpg** and **mintty** needs **winpty**
 Some `gpg` commands, for example `gpg --edit-card` and `gpg --edit-key`, prints its output to a Windows console, which *mintty* is not. So nothing will be printed in the terminal and the program will just be stuck.
 
 This is solved by starting `gpg` using [winpty](https://github.com/rprichard/winpty).
