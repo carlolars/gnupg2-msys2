@@ -80,7 +80,7 @@ The default behaviour when `gpg` is asking for a password is to use a graphical 
 
 By adding `pinentry-mode loopback` to your `gpg.conf` file (`~/.gnupg/gpg.conf`) gpg will ask for passphrases using the same terminal as it was called from, but since pinentry prints its output to a Windows console then `gpg` **must** be called using `winpty`, see [above](#gpg-and-mintty-needs-winpty).
 
-Deleting a **secret** key doesn't technically need a _pin_ entry, instead a confirmation is supposed to pop up in a pinentry style, expecting 'yes' from you. If you have `pinentry-mode loopback` enabled, you'll encounter errors when deleting a secret key normally.
+Deleting a **secret** key doesn't technically need a *pin* entry, instead a confirmation is supposed to pop up in a pinentry style, expecting 'yes' from you. If you have `pinentry-mode loopback` enabled, you'll encounter errors when deleting a secret key normally.
 To solve this, use `gpgw --yes --delete-secret-keys [fingerprint]`.
 
 Unfortunately if using the gpg-agent + ssh-pageant from below then any ssh command that accesses the key from the gpg-agent will still show the popup window.
