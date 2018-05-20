@@ -76,6 +76,8 @@ does not work as expected when running it through *winpty*. So you'll need both.
 Put the alias in your *.bash_profile* file, see [below](#.bash_profile).
 
 ## Enter passphrase in the terminal instead of a popup window
+**WARNING!** Don't do this if you ever use the graphical interface (Kleopatra) since you won't get the graphical pinentry popup.
+
 The default behaviour when `gpg` is asking for a password is to use a graphical popup window.
 
 By adding `pinentry-mode loopback` to your `gpg.conf` file (`~/.gnupg/gpg.conf`) gpg will ask for passphrases using the same terminal as it was called from, but since pinentry prints its output to a Windows console then `gpg` **must** be called using `winpty`, see [above](#gpg-and-mintty-needs-winpty).
