@@ -6,6 +6,7 @@
         - [Windows *Path*](#windows-path)
         - [MSYS2 *PATH*](#msys2-path)
     - [**gpg** and **mintty** needs **winpty**](#gpg-and-mintty-needs-winpty)
+        - [gpg commands that requires winpty](#gpg-commands-that-requires-winpty)
     - [Enter passphrase in the terminal instead of a popup window](#enter-passphrase-in-the-terminal-instead-of-a-popup-window)
 - [SmartCard SSH Authentication in MSYS2](#smartcard-ssh-authentication-in-msys2)
 - [.bash_profile](#bash-profile)
@@ -74,6 +75,12 @@ The reason not to call the alias `gpg` to always use *winpty* is that some comma
 does not work as expected when running it through *winpty*. So you'll need both.
 
 Put the alias in your *.bash_profile* file, see [below](#.bash_profile).
+
+### gpg commands that requires winpty
+* --edit-key
+* --edit-card
+
+There might be more commands but these are the ones I've encountered.
 
 ## Enter passphrase in the terminal instead of a popup window
 **WARNING!** Don't do this if you ever use the graphical interface (Kleopatra) since you won't get the graphical pinentry popup.
