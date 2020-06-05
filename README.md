@@ -56,7 +56,7 @@ PATH="/c/Program Files (x86)/gnupg/bin":$PATH
 See below for an example [*.bash_profile*](#.bash_profile).
 
 ## **gpg** and **mintty** needs **winpty**
-Some `gpg` commands, for example `gpg --edit-card` and `gpg --edit-key`, prints its output to a Windows console, which *mintty* is not. So nothing will be printed in the terminal and the program will just be stuck.
+Some `gpg` commands, for example `gpg --edit-card` and `gpg --edit-key`, prints its output to a Windows console, while not to *mintty*. So nothing will be printed in the terminal and the program will just be stuck.
 
 This is solved by starting `gpg` using [winpty](https://github.com/rprichard/winpty).
 
