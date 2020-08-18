@@ -1,4 +1,6 @@
 
+Archiving this project since I don't use MSYS2 anymore (WSL yay!).
+---
 - [Using GnuPGv2 with MSYS2](#using-gnupgv2-with-msys2)
     - [Change GnuPG home (optional)](#change-gnupg-home-optional)
     - [Install GnuPG](#install-gnupg)
